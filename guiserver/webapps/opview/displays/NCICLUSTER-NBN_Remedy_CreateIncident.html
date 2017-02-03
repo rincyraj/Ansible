@@ -1,0 +1,124 @@
+<!-- Event Panel top, 1 to n Information Panels left and Action Panel right. -->
+
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<script language="javascript" type="text/javascript">
+	function notes(x)
+	{
+		var operatorNotes=document.getElementById(x).value;
+		if (operatorNotes=="" | operatorNotes==null)
+		{
+			operatorNotes="No operator notes provided.";
+		}	
+
+		currentitem = document.getElementsByName("TTSummary").item(0);
+
+                currentitem.value = operatorNotes;
+	}
+</script>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <title>
+	Netcool - Remedy Ticket Create Validate
+	<!--property:policy=NBN_Remedy_CreateIncident-->
+  </title>
+
+  <!-- CLUSTER: <!--property:DefaultClusterName=NCICLUSTER--> -->
+
+<style type="text/css" media="screen"><!--
+
+#logo { background color: #ffffff;
+	display: block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	width: 100%
+	height: 60;}
+#heading { background color: #ffffff;
+	display: block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	width: 100%
+	height: 60;
+	border: 1px black solid;}
+fieldset {
+        font-size: 14;
+        font-weight: bold;
+        text-align: center;
+        background-color: #000000;
+        color: #ffffff;}
+#column1, #column2 {
+        float: left;
+}
+#column1 {
+        background-color: #c0c0ff;
+        width: 240px;
+        height: 630;
+        margin-right: 5px;}
+#column2 {
+        background-color: #ffffff;
+        width: 100%;
+        height: 600;}
+#alerts {
+        background-color: #ffffff;
+        width: 100%;
+        height: 220;
+        border: 1px black solid;
+        margin-bottom: 5px;
+        overflow: auto;}
+--></style>
+
+</head>
+
+<body>
+	<div id="logo">
+		<table width=100% border=0 align=center>
+		<td>
+			<img src=../assets/installed/mwms/nbnco-logo.gif alt="NBNCo Logo" />
+		</td>
+		</table>
+	</div>
+	<br>
+	<div id="heading">
+		<table border=0 cellspacing=0 cellpading=0 width=100% align="right">
+		<tr><td>
+			<h3>Remedy Trouble Ticket Creation</h3>
+		</td>
+		<td valign="top" align="center">
+			<!--showdata:type="scalar" format="string" var="currdate"-->
+		</td></tr>
+		</table>
+	</div> 
+	<br>
+	<div id="column2">
+		<div id="alerts">
+			<table width=100% border=0 align=center>
+			<tr>
+			<fieldset>
+				<!--showdata:type="scalar" format="string" var="AlertCheck"-->
+			</fieldset>
+			</tr>
+			<tr>
+				<!--showdata:type="orgnodes" format="customtable" var="AlertList" id="AlertList" includes="SourceServerSerial,Node,Summary,TTNum,TTStatus" headerstyle="text-align: left; font-size: 12px; font-weight: bold;" style="overflow: visible; border=0; margin-left: 10px; padding:25px" cellstyle="background-color: #e0e7ef; padding: 1px; font-size: 10px update_interval="30" update_option="none" -->
+			</tr>
+			<tr>
+			<form>
+				<!--showdata:type="scalar" format="string" var="AdditionalNotes"-->
+				<input type="text" id="opnotes" size=150 onchange="notes(this.id)" />
+			</form>
+			</tr>
+			</table>
+		</div>
+                <div>
+			<table align="center">
+			<td>
+				<!--showdata:type="scalar" format="action" var="Button" policy="NBN_Remedy_CreateIncidentResult" isbutton="true" target="_self" params="User,FirstName,LastName,SourceServerSerial,SourceServerName,TTSummary"-->
+			</td>
+			<td>
+			</table>
+		</div>
+	</div>	
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!-- Event Panel top, 1 to n Information Panels left and Action Panel right. -->
+
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <title>
+	Netcool - Remedy Incident Creation: 
+	<!--property:policy=NBN_Remedy_CreateIncidentResult-->
+  </title>
+
+  <!-- CLUSTER: <!--property:DefaultClusterName=NCICLUSTER--> -->
+
+<style type="text/css" media="screen"><!--
+#logo { background color: #ffffff;
+        display: block;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        width: 100%
+        height: 60;}
+#heading { background color: #FF0000;
+	display: block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	width: 100%
+	height: 60;
+	border: 1px black solid;}
+	--></style>
+</head>
+
+<body>
+	<div id="logo">
+		<table width=100% border=0 align=center>
+		<td>
+			<img src=../assets/installed/mwms/nbnco-logo.gif alt="NBNCo Logo" />
+		</td>
+		</table>
+	</div>
+	<br>
+	<div id="heading">
+		<table border=0 cellspacing=0 cellpading=0 width=100% align="right">
+		<tr><td>
+			<h3>Remedy Ticket Creation - Result</h3>
+		</td>
+		<td valign="top" align="center">
+			<!--showdata:type="scalar" format="string" var="currdate"-->
+		</td></tr>
+		</table>
+	</div>
+	<div id="alerts">
+		<br>
+		<table width=100% border=0 align=center>
+		<tr>
+			<!--showdata:type="scalar" format="string" var="Create_Result"-->
+		</tr>
+		<br>
+		<tr>
+			<!--showdata:type="orgnodes" format="customtable" var="UpdateAlert" id="UpdateAlert" includes="SourceServerSerial,Node,Summary,TTNum,TTStatus,TTSummary" headerstyle="text-align: left; font-size: 12px; font-weight: bold;" style="overflow: visible; border=0; margin-left: 10px; padding:25px" cellstyle="background-color: #e0e7ef; padding: 1px; font-size: 10px update_interval="30" update_option="none" -->
+		</tr>
+		</table>
+</body>
+</html>

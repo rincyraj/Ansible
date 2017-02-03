@@ -1,0 +1,190 @@
+<?xml version="1.0" ?> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
+	1.0 Transitional//EN" "http://www.w3.org/TR/
+	xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<script language="javascript" type="text/javascript">
+        function notes(x)
+        {
+                var operatorNotes=document.getElementById(x).value;
+                if (operatorNotes=="" | operatorNotes==null)
+                {
+                        operatorNotes="No operator notes provided.";
+                }
+                currentitem = document.getElementsByName("TTNum").item(0);
+
+                currentitem.value = operatorNotes;
+        }
+</script>
+
+<!--
+        <!--property:policy=RemedyFailedIncidentDetails-->
+        <!--property:DefaultClusterName=NCICLUSTER-->
+-->
+
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<title>Netcool - Remedy Manual Update</title>
+
+	<style type="text/css" media="screen"><!--
+body {
+	font-size: 12pt;
+	font-family: Arial, Helvetica, Geneva, Swiss, sans-serif;
+	line-height: 14px;
+	background-color: #ffffff;
+}
+	
+td {
+	background-color: #ffffff;
+	font-family: Arial;
+	font-size: 10;
+}
+th {
+	font-family: Arial;
+	font-size: 12;
+	text-align: left;
+}
+fieldset {
+	font-size: 10;
+	font-weight: bold;
+	text-align: center;
+	background-color: #000000;
+	color: #ffffff;
+}
+#column1, #column2 {
+	float: left;
+}
+#column1 {
+	background-color: #c0c0ff;
+	width: 240px;
+	height: 630;
+	margin-right: 5px;
+}
+#column2 {
+	background-color: #ffffff;
+	width: 100%;
+	height: 600;
+}
+#sinfo {
+	background-color: #ffffff;
+	width: 240px;
+	height: 442;
+	border: 1px black solid;
+	margin-bottom: 5px;
+}
+#apps {
+	background-color: #ffffff;
+	width: 240px;
+	height: 197;
+	border: 1px black solid;
+	overflow: auto;
+}
+#asset {
+	background-color: #ffffff;
+	width: 655px;
+	height: 190;
+	margin-bottom: 5px;
+	border: 1px black solid;
+}
+#tickets {
+	background-color: #ffffff;
+	width: 100%;
+	height: 220;
+	border: 1px black solid;
+	margin-bottom: 5px;
+	overflow: auto;
+}
+#alerts {
+	background-color: #ffffff;
+	width: 100%;
+	height: 220;
+	border: 1px black solid;
+	margin-bottom: 5px;
+	overflow: auto;
+}
+#fulltick {
+	background-color: #ffffff;
+	width: 655px;
+	height: 195;
+	border: 1px black solid;
+}
+#header {
+	background-color: #ffffff;
+	display: block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	width: 100%;
+	height: 60;
+	border: 1px black solid;
+}
+	--></style>
+<style type="text/css">
+.textbox { background-color:#C0C0C0; margin-left: 40px; }
+</style>
+</head>
+<body>
+		<div id="header">
+			<br>
+			<table border=0 cellspacing=0 cellpadding=0 width=100% align="right">
+			<tr><td>
+			<img src="../assets/installed/mwms/nbnco-logo.gif"/>
+			</td>
+			<td>
+			<h3>Netcool-Remedy Incident Details</h3>
+			</td>
+			<td valign="top" align="center">
+					<!--showdata:type="scalar" format="string" var="currdate"-->
+			</td></tr>
+			</table>	
+		</div>
+		
+		<div id="column2">
+			<div id="alerts">
+				<br>
+				<table width=100% border=10 align=center>
+				<tr><td>
+				<fieldset>
+					<!--showdata:type="scalar" 
+						     format="string" 
+						     var="FAILED_INCIDENT_TITLE"
+					-->
+				</fieldset>
+				</td></tr>
+				</table>
+				<br>
+
+				<tr>
+				<!--showdata:type="orgnodes"
+					     format="peritem"
+					     var="FailedIncidents"
+					     id="FailedIncidents"
+					     includes="Identifier,IncidentType,RetryAction,SIAResourceID,Node,Summary,ImpactType,UrgencyType,OperatorNotes,CatTier2,CatTier3,FirstName,LastName,SIAStatus,SIAAccessSeekers"
+					     headerstyle="text-align: left; font-size: 12px; font-weight: bold;"
+					     style="overflow: visible; border=0; margin-left: 10px; padding: 25px"
+					     cellstyle="background-color: #e0e7ef; padding: 1px; font-size: 10px"
+					     update_interval="30"
+					     update_option="none"
+				-->					     	
+				</tr>
+                        <tr>
+                        <form>
+                                Insert the Remedy Incident ID for this event:
+                                <br>
+                                <input type="text" class="textbox" id="opnotes" size=30 onchange="notes(this.id)" />
+                        </form>
+                        </tr>
+			<br>
+                        <!--showdata:
+                                var="BUTTON1"
+                                type="scalar"
+                                format="action"
+                                policy="RemedyFailedIncidents"
+                                isbutton="true"
+                                target="_self"
+                                params="SourceServerName,SourceServerSerial,User,TTNum"
+                        -->
+                        </div>
+
+		</div>
+</body>
+

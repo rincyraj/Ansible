@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<!-- ***************************************************** {COPYRIGHT-TOP-RM} ***
+* Licensed Materials - Property of IBM
+* "Restricted Materials of IBM"
+*
+* 5724-S43
+* (C) Copyright IBM Corp. 2009
+*
+* US Government Users Restricted Rights - Use, duplication, or
+* disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+********************************************************** {COPYRIGHT-END-RM} -->
+<head>
+	<title>Maintenance Manager</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<style type="text/css" media="screen">
+  <!--
+  <!--property:policy=mwms-->
+  <!--property:DefaultClusterName=NCICLUSTER-->
+  -->
+<!--
+#column1, #column2 {
+        float: left;
+}
+
+#column2 {
+        background-color: #ffffff;
+        width: 955px;
+        height: 650px;
+        border: 0px black solid;
+}
+#header {
+        background-color: #ffffff;
+        display: block;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        width: 955px;
+        height: 115px;
+        border: 0px black solid;
+}
+
+img{ border: 0pt; }
+
+#bottom_div{
+width: 520px;
+height: 150px;
+background-color: #b9d1ea;
+clear:both;
+}
+
+#vista_toolbar {
+float:left;
+font:normal 12px 'Trebuchet MS','Arial';
+margin:0;
+padding:0;
+}
+
+#vista_toolbar ul {
+background-image:url(../assets/installed/mwms/back.gif);
+background-repeat:repeat-x;
+float:left;
+line-height:32px;
+list-style:none;
+margin:0;
+padding:0 0 0 0;
+width:955px;
+}
+
+#vista_toolbar li {
+display:inline;
+padding:0;
+}
+
+#vista_toolbar a {
+color:#FFF; /* need because it will use default link color */
+float:left;
+padding:0 3px 0 3px; /* left 3 px because of left.jpg image */ 
+text-decoration:none;
+}
+
+#vista_toolbar a span {
+display:block;
+float:none;
+padding:0 10px 0 7px;
+}
+
+#vista_toolbar a span img {
+border:none;
+margin:8px 4px 0 0;
+}
+
+/* show picture when mouse over link */
+#vista_toolbar a:hover{
+background: url(../assets/installed/mwms/left.jpg) no-repeat left center;
+}
+
+#vista_toolbar a:hover span {
+background:url(../assets/installed/mwms/right.jpg) no-repeat right center;
+}
+
+#vista_toolbar a.right {
+float:right; /* for help button - just add class "right" ->  <a class="right"... */
+}
+
+#toolbar_options {
+  position: relative;
+  text-align: left;
+  top: 0px;
+  left: 0px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+#auth_wrapper {
+  position: absolute;
+  top: 0px;
+  left: 665px;
+  height: 10px;
+/*
+  top: 132px;
+  left: 350px;
+  width: 605px;
+*/
+}
+
+#auth_area {
+  position: relative;
+  text-align: left;
+  top: 0px;
+  left: 0px;
+  padding-bottom: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: black;
+}
+
+
+#auth_label {
+  color: white;
+  font-weight: normal;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 10px;
+}
+
+#auth_user {
+  color: white;
+  font-weight: bold;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+#the_tzone {
+  position: relative;
+  text-align: right;
+  top: 0px;
+  left: 0px;
+  color: white;
+  padding-left: 80px;
+}
+
+
+#tz_label {
+  color: white;
+  font-weight: normal;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 10px;
+}
+
+
+--></style>
+</head>
+
+<body>
+<div id="header">
+	<img src="../assets/installed/mwms/mmhead2.jpg">
+</div>
+
+<div id="vista_toolbar">
+
+<ul>
+     <li>
+     <a href="NCICLUSTER-new1twin.html?mwid=0" target="display"><span>Add One Time</span></a>
+     </li>
+
+     <li>
+     <a href="NCICLUSTER-newrwin.html" target="display"><span>Add Recurring</span></a>
+     </li>
+
+     <li>
+     <a href="NCICLUSTER-winview.html" target="display"><span>View Windows</span></a>
+     </li>
+
+     <li>
+     <span id="the_tzone">
+        Time Zone
+        <select id="timezone" name="timezone">
+<!--		<option value="Etc/GMT+12">GMT-12</option>	-->
+
+		<option value="MIT">MIT, Midway, Samoa</option>
+	
+		<option value="HST">Hawaii, Tahiti</option>
+	
+		<option value="AST">Alaska, Juneau</option>
+	
+		<option value="PST">Los Angeles, Vancouver</option>
+	
+		<option value="MST">Denver, MST</option>
+	
+		<option value="CST">Chicago, Mexico City</option>
+	
+		<option value="EST">New York, Toronto</option>
+
+		<option value="PRT">Goose Bay, St Thomas</option>
+	
+		<option value="BET">AGT, Buenos Aires</option>
+	
+		<option value="America/Noronha">DeNoronha</option>
+	
+		<option value="Atlantic/Cape_Verde">Cape Verde</option>
+	
+		<option value="GMT">Bissau, Greenwich, GMT</option>
+	
+		<option value="CET">Algiers, Berlin</option>
+	
+		<option value="EET">Cairo, Istanbul, Kiev</option>
+	
+		<option value="EAT">Baghdad, Moscow, EAT</option>
+	
+		<option value="NET">Dubai, Mahe, NET</option>
+	
+		<option value="IST">Calcutta, IST, Katmandu</option>
+	
+		<option value="BST">BST, Rangoon</option>
+	
+		<option value="VST">Bangkok, Jakarta, VST</option>
+	
+		<option value="PRC">Hongkong, China, Perth</option>
+	
+		<option value="JST">Seoul, Japan, ROK</option>
+	
+		<option value="AET">AET, Sydney, Guam</option>
+	
+		<option value="SST">Guadalcanal, SST</option>
+	
+		<option value="NST">NZ, Fiji</option>
+	
+		<option value="Pacific/Enderbury">Enderbury</option>
+	
+		<option value="Pacific/Kiritimati">Kiritimati</option>        </select>
+
+<!--         &nbsp;&nbsp;<input type="checkbox" id="dst" name="dst"> Daylight Savings Time	-->
+     </span>
+     </li>
+</ul>
+
+</div>
+
+
+<div id="auth_wrapper">
+  <div id="auth_area">
+    <span id="auth_label">Logged in as </span>
+    <span id="auth_user"><!--showdata:var="REQ_REMOTEUSER" type="scalar" format="string"--></span>
+  </div>
+</div>
+
+
+     
+<div id="column2">
+<iframe
+	id="display"
+	name="display"
+	src="NCICLUSTER-blank.html"
+	frameborder="0"
+	marginwidth="0"
+	marginheight="0"
+	scrolling="auto"
+	align="center"
+	height="649"
+	width="955">
+</iframe>
+</div>
+
+<br /><br />
+
+</body>
+</html>
