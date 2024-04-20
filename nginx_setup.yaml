@@ -1,0 +1,16 @@
+--- # start of yaml file
+- name: Install and start Nginx  #- represents list of elements
+  hosts: all                     # run on all target servers listed in inventory file
+  become: true                   #run tasks with sudo/root privileges
+
+  tasks:
+    - name : Ensure Nginx is installed
+      apt:        # sudo apt install nginx
+        name: nginx
+        state : present  # Ensure the package is installed
+    - name : Start Nginx service
+      service:
+        name:nginx
+        state: started 
+      
+  
