@@ -10,7 +10,7 @@
         state : present  # Ensure the package is installed
     - name : Start Nginx service
       service:     # shell:systemctl start nginx
-        name:nginx
+        name: nginx
         state: started 
       
   
