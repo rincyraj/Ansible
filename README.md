@@ -27,4 +27,8 @@ Ansible ad-hoc commands are powerful one-liners used to perform quick tasks or g
   119  ansible -i inventory all -m 'copy' -a "src=/home/ubuntu/src_file dest=/home/ubuntu/file.txt"
 
 Ansible Playbooks--> if we want to run multiple commands, go with Ansible playbooks. it is written in yaml file that define a series of tasks to be executed on remote hosts. Playbooks allow you to automate configuration management, application deployment, and orchestration of infrastructure using Ansible
+How to run ansible playbooks?
+ansible-playbooks -i inventory nginx_setup.yaml    # -i denotyes inventory path. if inventory is not in currentt path give full path
+Difference bteween ansible and ansible playbooks?
+ ansible is used to run  ansible adhoc commands and ansible-playbook is used to run ansible playbooks
       
