@@ -5,11 +5,11 @@
 
   tasks:
     - name : Ensure Nginx is installed
-      apt:        # sudo apt install nginx
+      apt:        # shell: apt install nginx (is also works). but apt is an ansible mode and it is more generic and reliable
         name: nginx
         state : present  # Ensure the package is installed
     - name : Start Nginx service
-      service:
+      service:     # shell:systemctl start nginx
         name:nginx
         state: started 
       
